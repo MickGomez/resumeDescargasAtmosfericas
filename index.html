@@ -5,40 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Descargas Atmosféricas</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#objetivos">Objetivos</a></li>
-                <li><a href="#desarrollo">Desarrollo</a></li>
-                <li><a href="#contactos">Contactos</a></li>
+                <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li><a href="#objetivos" class="nav-link">Objetivos</a></li>
+                <li><a href="#desarrollo" class="nav-link">Desarrollo</a></li>
+                <li><a href="#contactos" class="nav-link">Contactos</a></li>
             </ul>
         </nav>
     </header>
-    <section id="inicio" class="section">
-        <h1>Descargas Atmosféricas en Paraguay</h1>
-        <p>Las descargas atmosféricas, también conocidas como rayos, son fenómenos eléctricos que ocurren durante tormentas.</p>
-        <button onclick="location.href='#inicio'">Saber más</button>
+    <section id="inicio" class="section animate__animated animate__fadeIn">
+        <h1 class="animate__animated animate__bounceInDown">Descargas Atmosféricas en Paraguay</h1>
+        <p class="animate__animated animate__fadeIn animate__delay-1s">Las descargas atmosféricas, también conocidas como rayos, son fenómenos eléctricos que ocurren durante tormentas.</p>
+        <button class="cta-button animate__animated animate__pulse animate__infinite" onclick="showInfo('inicio')">Saber más</button>
     </section>
-    <section id="objetivos" class="section">
+    <section id="objetivos" class="section animate__animated animate__fadeIn">
         <h2>Objetivos</h2>
         <p>Somos un equipo dedicado a analizar las descargas eléctricas atmosféricas para comprender mejor estos fenómenos naturales.</p>
-        <button onclick="location.href='#objetivos'">Saber más</button>
+        <button class="cta-button" onclick="showInfo('objetivos')">Saber más</button>
     </section>
-    <section id="desarrollo" class="section">
+    <section id="desarrollo" class="section animate__animated animate__fadeIn">
         <h2>Desarrollo</h2>
         <p>Descubre cómo analizamos las descargas eléctricas para mejorar la seguridad y el conocimiento científico.</p>
-        <button onclick="location.href='#desarrollo'">Saber más</button>
+        <button class="cta-button" onclick="showInfo('proceso')">Saber más</button>
     </section>
-    <section id="contactos" class="section">
+    <section id="contactos" class="section animate__animated animate__fadeIn">
         <h2>Contactos</h2>
         <p>Contáctanos para obtener más información sobre nuestro trabajo.</p>
-        <button onclick="location.href='#contactos'">Saber más</button>
+        <button class="cta-button" onclick="showInfo('contactos')">Saber más</button>
     </section>
     <footer>
-        <p>&copy; 2024 Descargas Atmosféricas en Asunción - Paraguay</p>
+        <div class="footer-content">
+            <div class="socials">
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p>&copy; 2024 Descargas Atmosféricas | <a href="#">Política de Privacidad</a> | <a href="#">Términos de Servicio</a></p>
+        </div>
     </footer>
+
+    <!-- Modal -->
+    <div id="infoModal" class="modal">
+        <div class="modal-content animate__animated animate__zoomIn">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalContent"></p>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow.js/1.1.2/wow.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

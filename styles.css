@@ -6,6 +6,29 @@ body {
     color: #c5c6c7;
 }
 
+body:before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('imagenes/rayos-en-cielo-nublado_3840x2400_xtrafondos.com.jpg') no-repeat center center fixed;
+    background-size: cover;
+    opacity: 1;
+    z-index: -1;
+    animation: background-fade 1s infinite alternate;
+    filter: brightness(1.7) contrast(1.4);
+}
+
+
+@keyframes background-fade {
+    0% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+
+
 header {
     background: #1f2833;
     padding: 15px 0;
@@ -27,14 +50,20 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
+    display: inline-block;
     color: #66fcf1;
     font-weight: bold;
-    transition: color 0.3s, transform 0.3s;
+    padding: 10px 20px;
+    transition: background 0.3s, transform 0.3s;
+    border-radius: 5px;
+    border: 2px solid transparent;
 }
 
 nav ul li a:hover {
     color: #45a29e;
+    background: rgba(102, 252, 241, 0.2);
     transform: scale(1.1);
+    border: 2px solid #66fcf1;
 }
 
 .section {
@@ -54,7 +83,7 @@ nav ul li a:hover {
     width: 2px;
     height: 100%;
     background: linear-gradient(to bottom, transparent 0%, #66fcf1 50%, transparent 100%);
-    animation: lightning 2s infinite;
+    animation: lightning 5s infinite;
 }
 
 @keyframes lightning {
@@ -72,51 +101,127 @@ footer {
     text-align: center;
 }
 
+footer .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer .footer-content .socials a {
+    color: #c5c6c7;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+footer .footer-content .socials a:hover {
+    color: #66fcf1;
+}
+
+footer p {
+    margin: 10px 0 0;
+}
+
+footer a {
+    color: #66fcf1;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #45a29e;
+}
+
 h1, h2 {
     color: #66fcf1;
-    text-shadow: 0 0 10px #66fcf1, 0 0 20px #45a29e;
+    text-shadow: 0 0 10px #66fcf1, 0 0 20px #66fcf1;
 }
 
-p {
-    font-size: 18px;
-    line-height: 1.6;
-}
-
-button {
-    background-color: #45a29e;
-    border: none;
-    color: #fff;
+.cta-button {
+    background: #66fcf1;
+    color: #1f2833;
     padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 10px 2px;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
+    font-size: 16px;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-button:hover {
-    background-color: #66fcf1;
+.cta-button:hover {
+    background: #45a29e;
     transform: scale(1.1);
 }
 
-body:before {
-    content: "";
+.modal {
+    display: none;
     position: fixed;
-    top: 0;
+    z-index: 1;
     left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
-    background: url('imagenes/rayos-en-cielo-nublado_3840x2400_xtrafondos.com.jpg') no-repeat center center fixed;
-    background-size: cover;
-    opacity: 1;
-    z-index: -1;
-    animation: background-fade 1s infinite alternate;
-    filter: brightness(1.7) contrast(1.4);
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
 }
 
-@keyframes background-fade {
-    0% { opacity: 0.3; }
-    100% { opacity: 1; }
+.modal-content {
+    background-color: #1f2833;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    color: #c5c6c7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Animaciones para los enlaces de navegación */
+.nav-link {
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    transform: translateY(-3px);
+    text-shadow: 0 0 5px #66fcf1;
+}
+
+/* Animaciones para los iconos sociales */
+.social-icon {
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+}
+
+/* Mejora la animación del fondo */
+@keyframes background-fade {
+    0% { opacity: 0.3; filter: brightness(1) contrast(1); }
+    100% { opacity: 1; filter: brightness(1.7) contrast(1.4); }
+}
+
+/* Asegúrate de que las secciones tengan un mínimo de altura para un mejor efecto de scroll */
+.section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
