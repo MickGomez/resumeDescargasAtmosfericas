@@ -23,15 +23,15 @@ body:before {
 
 
 @keyframes background-fade {
-    0% { opacity: 0.3; }
-    100% { opacity: 1; }
+    0% { opacity: 0.3; filter: brightness(1) contrast(1); }
+    100% { opacity: 1; filter: brightness(1.7) contrast(1.4); }
 }
 
 
 
 header {
     background: #1f2833;
-    padding: 15px 0;
+    padding: 1px 0;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
@@ -60,7 +60,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #45a29e;
+    color: #fff;
     background: rgba(102, 252, 241, 0.2);
     transform: scale(1.1);
     border: 2px solid #66fcf1;
@@ -72,6 +72,7 @@ nav ul li a:hover {
     background: rgba(31, 40, 51, 0.8); /* Adding opacity to section background */
     position: relative;
     overflow: hidden;
+    animation: slide-in 1s ease-out;
     color: #fff; /* Ensure text is readable on darker backgrounds */
 }
 
@@ -223,5 +224,95 @@ h1, h2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 1vh;
+    padding: 2px;
+    text-align: center;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #66fcf1;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    transition: max-height 0.3s ease-in-out;
+    overflow: hidden;
+    max-height: 0;
+}
+
+.nav-menu.open {
+    max-height: 200px; /* Ajusta esto según el número de elementos del menú */
+}
+
+@media (min-width: 768px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    .nav-menu {
+        max-height: none;
+        flex-direction: row;
+    }
+}
+
+
+.section {
+    position: relative;
+    padding: 60px 20px;
+    text-align: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#inicio {
+    background-image: url('ruta/de/tu/imagen1.jpg');
+}
+
+#objetivos {
+    background-image: url('ruta/de/tu/imagen2.jpg');
+}
+
+#desarrollo {
+    background-image: url('ruta/de/tu/imagen3.jpg');
+}
+
+#contactos {
+    background-image: url('ruta/de/tu/imagen4.jpg');
+}
+
+.back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #66fcf1;
+    color: #1f2833;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease-in-out;
+}
+
+.back-to-top.show {
+    display: block;
 }
 

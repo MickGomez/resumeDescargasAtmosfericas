@@ -3,15 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descargas Atmosféricas</title>
+    <title>Descargas Atmosféricas en Paraguay</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
+    <header class="site-header">
+        <nav class="main-nav">
+            <button class="menu-toggle" aria-label="Abrir menú">
+                <i class="fas fa-bars"></i>
+            </button>
+            <button id="backToTop" class="back-to-top" aria-label="Volver arriba"><i class="fas fa-arrow-up"></i></button>
+
+            <ul class="nav-menu">
                 <li><a href="#inicio" class="nav-link">Inicio</a></li>
                 <li><a href="#objetivos" class="nav-link">Objetivos</a></li>
                 <li><a href="#desarrollo" class="nav-link">Desarrollo</a></li>
@@ -19,48 +24,67 @@
             </ul>
         </nav>
     </header>
-    <section id="inicio" class="section animate__animated animate__fadeIn">
-        <h1 class="animate__animated animate__bounceInDown">Descargas Atmosféricas en Paraguay</h1>
-        <p class="animate__animated animate__fadeIn animate__delay-1s">Las descargas atmosféricas, también conocidas como rayos, son fenómenos eléctricos que ocurren durante tormentas.</p>
-        <button class="cta-button animate__animated animate__pulse animate__infinite" onclick="showInfo('inicio')">Saber más</button>
-    </section>
-    <section id="objetivos" class="section animate__animated animate__fadeIn">
-        <h2>Objetivos</h2>
-        <p>Somos un equipo dedicado a analizar las descargas eléctricas atmosféricas para comprender mejor estos fenómenos naturales.</p>
-        <button class="cta-button" onclick="showInfo('objetivos')">Saber más</button>
-    </section>
-    <section id="desarrollo" class="section animate__animated animate__fadeIn">
-        <h2>Desarrollo</h2>
-        <p>Descubre cómo analizamos las descargas eléctricas para mejorar la seguridad y el conocimiento científico.</p>
-        <button class="cta-button" onclick="showInfo('proceso')">Saber más</button>
-    </section>
-    <section id="contactos" class="section animate__animated animate__fadeIn">
-        <h2>Contactos</h2>
-        <p>Contáctanos para obtener más información sobre nuestro trabajo.</p>
-        <button class="cta-button" onclick="showInfo('contactos')">Saber más</button>
-    </section>
-    <footer>
-        <div class="footer-content">
-            <div class="socials">
-                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+
+    <main>
+        <section id="inicio" class="section hero animate__animated animate__fadeIn">
+            <div class="container">
+                <h1 class="animate__animated animate__bounceInDown">Descargas Atmosféricas en Paraguay</h1>
+                <p class="animate__animated animate__fadeIn animate__delay-1s">Explorando la naturaleza eléctrica de nuestro cielo: un viaje a través de los rayos y tormentas.</p>
+                <button class="cta-button animate__animated animate__pulse animate__infinite" onclick="showInfo('inicio')">Descubre más</button>
             </div>
-            <p>&copy; 2024 Descargas Atmosféricas | <a href="#">Política de Privacidad</a> | <a href="#">Términos de Servicio</a></p>
+        </section>
+
+        <section id="objetivos" class="section objectives animate__animated animate__fadeIn">
+            <div class="container">
+                <h2>Nuestros Objetivos</h2>
+                <p>Desentrañando los misterios de las descargas eléctricas para un futuro más seguro y consciente.</p>
+                <button class="cta-button" onclick="showInfo('objetivos')">Conoce nuestras metas</button>
+            </div>
+        </section>
+
+        <section id="desarrollo" class="section process animate__animated animate__fadeIn">
+            <div class="container">
+                <h2>Nuestro Desarrollo</h2>
+                <p>De la observación a la acción: cómo analizamos y aplicamos nuestros conocimientos sobre descargas atmosféricas.</p>
+                <button class="cta-button" onclick="showInfo('proceso')">Explora nuestro proceso</button>
+            </div>
+        </section>
+
+        <section id="contactos" class="section contact animate__animated animate__fadeIn">
+            <div class="container">
+                <h2>Conecta con Nosotros</h2>
+                <p>¿Tienes preguntas o ideas? Estamos aquí para iluminar tus dudas sobre las descargas atmosféricas.</p>
+                <button class="cta-button" onclick="showInfo('contactos')">Contáctanos</button>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="socials">
+                    <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <p>&copy; 2024 Descargas Atmosféricas | <a href="#">Política de Privacidad</a> | <a href="#">Términos de Servicio</a></p>
+            </div>
         </div>
     </footer>
 
-    <!-- Modal -->
+    <!-- Modal para información adicional -->
     <div id="infoModal" class="modal">
         <div class="modal-content animate__animated animate__zoomIn">
             <span class="close" onclick="closeModal()">&times;</span>
             <h2 id="modalTitle"></h2>
-            <p id="modalContent"></p>
+            <div id="modalContent"></div>
         </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow.js/1.1.2/wow.min.js"></script>
     <script src="script.js"></script>
+
 </body>
 </html>
